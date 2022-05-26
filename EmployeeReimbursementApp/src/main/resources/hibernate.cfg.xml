@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+  
+<hibernate-configuration>
+    <session-factory>
+  
+        <!-- Connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/EmployeeReimburseApp</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+  
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+  
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">true</property>
+  
+  		<!-- When we start the application, there are automatically 10 connections ready to be used -->
+  		<property name="hibernate.connection.pool_size">10</property>
+  
+        <!-- Update database on startup -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+  		<!-- NONE, CREATE, UPDATE, VALIDATE (prod) -->
+  
+        <!-- Annotated entity classes -->
+        <mapping class="com.revature.models.Employee"/>
+        <mapping class="com.revature.models.Manager"/>
+        <mapping class="com.revature.models.ERSMain"/>
+        
+         
+    </session-factory>
+</hibernate-configuration>
+<!-- 
+<hibernate-mapping>
+   <class name = "Employee" table = "Employees">
+      
+      <meta attribute = "class-description">
+         This class contains the employee detail. 
+      </meta>
+      
+      <id name = "id" type = "int" column = "id">
+         <generator class="native"/>
+      </id>
+      
+      <property name = "firstName" column = "first_name" type = "string"/>
+      <property name = "lastName" column = "last_name" type = "string"/>
+      <property name = "salary" column = "salary" type = "int"/>
+      
+   </class>
+</hibernate-mapping>
+ -->

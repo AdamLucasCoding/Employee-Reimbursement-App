@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://Java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+
+	<servlet>
+		<servlet-name>EmployeeReimburseApp</servlet-name>
+		<servlet-class>com.revature.web.EmployeeReimburseApp
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EmployeeReimburseApp</servlet-name>
+		<url-pattern>/Tickets</url-pattern>
+		<url-pattern>/Ticket</url-pattern>
+		<url-pattern>/TicketByStatus</url-pattern>
+		<url-pattern>/TicketByEmployeeId</url-pattern>
+		<url-pattern>/Employees</url-pattern>
+		<url-pattern>/Employee</url-pattern>
+		<url-pattern>/Manager</url-pattern>
+		<url-pattern>/registerTicket</url-pattern>
+		<url-pattern>/registerEmployee</url-pattern>
+		<url-pattern>/registerManager</url-pattern>
+		<url-pattern>/updateTicket</url-pattern>
+		<url-pattern>/updateEmployee</url-pattern>
+		<url-pattern>/updateManager</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error</location>
+	</error-page>
+
+</web-app>
